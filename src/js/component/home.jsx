@@ -35,8 +35,14 @@ const Home = () => {
                         <button className="btn btn-sm btn-delete" onClick={() => deleteTask(index)}>X</button>
                     </li>
                 ))}
-                <li className="task-item task-count">{tasks.length} tareas pendientes</li>
+                <li className="task-item task-count">
+                    {tasks.length === 0 
+                        ? "Sin tareas pendientes, añade una." 
+                        : `${tasks.length} tarea${tasks.length > 1 ? 's' : ''} pendiente${tasks.length > 1 ? 's' : ''}`}
+                </li>
             </ul>
+            <div className="sheetTwo task-list"/>
+            <div className="sheetThree task-list"/>
         </div>
     );
 };
